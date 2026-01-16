@@ -1,0 +1,278 @@
+/* --- General Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    color: #444;
+    overflow-x: hidden;
+}
+
+/* --- Top Alert Bar --- */
+.bg-primary {
+    background-color: #0056b3 !important;
+}
+
+.bg-primary small {
+    letter-spacing: 0.5px;
+}
+
+.bg-primary a:hover {
+    color: #ffc107 !important; /* Gold color for high visibility */
+}
+
+/* --- Hero Section with Overlay --- */
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- Founder / About Section Styling --- */
+.founder-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.founder-photo {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.founder-photo:hover {
+    transform: scale(1.03);
+}
+
+.founder-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+/* --- Admission Process Journey Styling --- */
+.process-box {
+    position: relative;
+    border: 1px solid rgba(0, 86, 179, 0.1);
+    border-radius: 15px;
+    background: #fdfdfd;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.process-box:hover {
+    border-color: #0056b3;
+    background: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #0056b3;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+}
+
+/* Connecting line for desktop journey steps */
+@media (min-width: 768px) {
+    #process .row { position: relative; }
+    .process-box::after {
+        content: '';
+        position: absolute;
+        top: 50px; 
+        left: 100%;
+        width: 100%;
+        height: 2px;
+        border-top: 2px dashed #0056b3;
+        z-index: 1;
+        opacity: 0.2;
+    }
+    .col-md-3:last-child .process-box::after { display: none; }
+}
+
+/* --- Documents Checklist Styling --- */
+#doc-list {
+    transition: all 0.4s ease-in-out;
+    border-left: 5px solid #0056b3;
+}
+
+#doc-items li {
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- Cards & Service Section Styling --- */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-card .bi {
+    transition: transform 0.4s ease, color 0.4s ease;
+    display: inline-block;
+}
+
+.service-card:hover .bi {
+    transform: scale(1.15) rotate(7deg);
+}
+
+/* Category-specific Icon Colors */
+.text-danger .bi-heart-pulse-fill { color: #dc3545; }
+.text-primary .bi-gear-wide-connected { color: #007bff; }
+.text-success .bi-capsule-pill { color: #198754; }
+.text-warning .bi-mortarboard-fill { color: #ffc107; }
+
+/* --- Urgency Section Styling --- */
+.urgency-section {
+    background: linear-gradient(135deg, #d32f2f, #f44336);
+    padding: 60px 0;
+}
+
+.urgency-section h2::after { background: #fff; }
+
+.seats-badge {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px dashed #fff;
+    border-radius: 15px;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* --- Section Headings with Underline --- */
+h2 {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #0056b3;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+    #about h2::after {
+        left: 0;
+        transform: none;
+    }
+}
+
+/* --- Contact Section with Parallax --- */
+.contact-section {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), 
+                url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.15) !important;
+    overflow: hidden;
+    border-top: 6px solid #0056b3 !important;
+}
+
+/* --- Reveal Animations --- */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Floating WhatsApp Button --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: white;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+/* --- Footer & Responsive Fixes --- */
+footer { letter-spacing: 1px; }
+
+@media (max-width: 768px) {
+    footer { padding-bottom: 80px !important; }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float span { display: none; }
+    .whatsapp-float { padding: 12px; border-radius: 50%; }
+    #about h2::after { left: 50%; transform: translateX(-50%); }
+    .founder-photo { width: 250px; height: 250px; }
+}
